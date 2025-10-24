@@ -1,15 +1,21 @@
 <?php 
 declare(strict_types=1);
 echo "________________________________Урок_1________________________________" . '<br>';
-// задача 1.
+// задача 1
 function getStatusMessage(string $status): string {
-    match($status){
+    // match($status){  
+    //     'success' => $return = 'Успех',
+    //     'error'   => $return ='Ошибка',
+    //     'pending' => $return ='Ожидание',
+    //     default   => $return ='Неизвестно'
+    // };
+    // return $return;
+    return match($status){ // раньше я так не делал, повод начать.
         'success' => $return = 'Успех',
         'error'   => $return ='Ошибка',
         'pending' => $return ='Ожидание',
         default   => $return ='Неизвестно'
     };
-    return $return;
 }
 $testArray = ['success','error','pending', '' ];
 foreach($testArray  as $row){
@@ -76,3 +82,43 @@ $user2 = (object)[
 ];
 echo getUserEmail($user2). '<br>';
 echo "________________________________Урок_2________________________________" . '<br>';
+// задача 1
+function multiply(float $mul1, float $mul2):float{
+    
+    return $mul1 * $mul2; 
+}
+echo multiply(1.2, 2). '<br>';
+// задача 2
+function isAdult(int $age): bool{
+    // return $age >=18 ? true : false; //как оказалось, это не нужно.
+    return $age >= 18;
+}
+echo isAdult(18). '<br>';
+echo isAdult(16). '<br>';
+// задача 3
+function calculateTax(float $price, float $tax): float{
+    if($tax<1){
+    $total= $price + ($price * $tax);
+    }else $total= $price +(($price * $tax)/100);
+    return round($total,2);
+}
+echo calculateTax(50, 40). '<br>';
+echo calculateTax(50, 0.4). '<br>';
+// задача 4
+function getNamesLength(array $names): array {
+    return array_map('strlen', $names);
+}
+$arratest4=["Alice", "Bob", "Charlie"];
+echo implode(',',getNamesLength($arratest4)). '<br>';
+// задача 5
+function formatValue(int|float|string $value): string{
+    if (is_numeric($value)) {
+        // Приведение к float для точного форматирования
+        return number_format((float) $value, 2, '.', '');
+    } else {
+        return $value;
+    }
+}
+echo formatValue('tax'). '<br>';
+echo formatValue(50). '<br>';
+echo "________________________________Урок_3________________________________" . '<br>';

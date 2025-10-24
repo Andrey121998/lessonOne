@@ -6,5 +6,4 @@ RewriteRule . index.php
 
 php_flag magic_quotes_gpc off
 
-order deny,allow
-allow from all
+Require all granted
