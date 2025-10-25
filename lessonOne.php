@@ -11,10 +11,10 @@ function getStatusMessage(string $status): string {
     // };
     // return $return;
     return match($status){ // раньше я так не делал, повод начать.
-        'success' => $return = 'Успех',
-        'error'   => $return ='Ошибка',
-        'pending' => $return ='Ожидание',
-        default   => $return ='Неизвестно'
+        'success' => 'Успех',
+        'error'   =>'Ошибка',
+        'pending' => 'Ожидание',
+        default   => 'Неизвестно'
     };
 }
 $testArray = ['success','error','pending', '' ];
@@ -54,12 +54,17 @@ enum OrderStatus: string {
 }
 
 function getDeliveryMessage(OrderStatus $status): string {
-     match ($status) {
-        OrderStatus::Pending => $return ='Заказ в ожидании',
-        OrderStatus::Shipped => $return ='Заказ отправлен',
-        OrderStatus::Delivered => $return ='Заказ доставлен',
+    //  match ($status) {
+    //     OrderStatus::Pending => $return ='Заказ в ожидании',
+    //     OrderStatus::Shipped => $return ='Заказ отправлен',
+    //     OrderStatus::Delivered => $return ='Заказ доставлен',
+    // };
+    // return $return;
+   return match ($status) {
+        OrderStatus::Pending => 'Заказ в ожидании',
+        OrderStatus::Shipped => 'Заказ отправлен',
+        OrderStatus::Delivered => 'Заказ доставлен',
     };
-    return $return;
 }
 
 echo getDeliveryMessage(OrderStatus::Pending). '<br>';  
@@ -83,7 +88,7 @@ $user2 = (object)[
 echo getUserEmail($user2). '<br>';
 echo "________________________________Урок_2________________________________" . '<br>';
 // задача 1
-function multiply(float $mul1, float $mul2):float{
+function multiply(float $mul1, int $mul2):float{
     
     return $mul1 * $mul2; 
 }
@@ -114,7 +119,7 @@ echo implode(',',getNamesLength($arratest4)). '<br>';
 function formatValue(int|float|string $value): string{
     if (is_numeric($value)) {
         // Приведение к float для точного форматирования
-        return number_format((float) $value, 2, '.', '');
+        return number_format((float) $value);
     } else {
         return $value;
     }
@@ -195,7 +200,7 @@ $numTest = 6;
 printNumbers($numTest);
 // задача 4
 function factorial(int $num): void{
-    $facnum = $num;
+    $facnum = 1;
     $i = 1;
     // for ( $i = 1; $i <= $num; $i++ ){
         
