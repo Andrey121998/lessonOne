@@ -143,3 +143,89 @@ $credit = new CreditAccount(500);
 $bank->pay(200);
 $credit->pay(700);
 echo "________________________________Урок_3________________________________" . '<br>';
+// задача 1
+abstract class Shape {
+
+   abstract public function getArea(): float;
+   abstract public function draw(): void;
+}
+class Rectangle extends Shape implements Drawable{
+    protected float $horizontal;
+    protected float $vertical;
+    public function __construct(float $horizontal, float $vertical)
+    {
+        $this->horizontal = $horizontal;
+        $this->vertical = $vertical;
+    }
+    public function getArea(): float
+    {
+        return $this->horizontal * $this->vertical;
+    }
+    public function draw(): void
+    {
+        echo "Рисую квадрат со сторонами " . $this->horizontal . " и " . $this->vertical. '<br>';
+    }
+}
+class Circle extends Shape implements Drawable{
+    protected float $radius;
+    protected const float pi =   3.1415926535;
+    public function __construct(float $radius)
+    {
+        $this->radius=$radius;
+    }
+    public function getArea(): float
+    {
+        return round($this->radius*$this->radius  *self::pi,2);
+    }
+    public function draw(): void
+    {
+        echo "Рисую круг радиусом " . $this->radius. '<br>';
+    }
+}
+$rect = new Rectangle(10, 5);
+echo $rect->getArea(). '<br>';
+$circle = new Circle(7);
+echo $circle->getArea(). '<br>';  
+// задача 2
+interface Drawable {
+    public function draw():void;
+}
+$rect->draw();
+$circle->draw();
+// задача 3
+function renderShape(Shape $shape): void {
+    $shape->draw(); 
+    echo "Площадь: " . $shape->getArea() . '<br>'; // пришлось добавить абстрактный метод drow, не знаю нужно ли было это делать
+}
+renderShape(new Rectangle(5, 5));  
+renderShape(new Circle(3));
+// задача 4
+abstract class Vehicle {
+    abstract public function move():void;
+}
+interface Fuelable {
+    public function refuel():void;
+}
+class Crossover extends Vehicle implements Fuelable{
+    public function move(): void
+    {
+        echo "Машина едет!". '<br>';
+    }
+    public function refuel(): void
+    {
+        echo "Машина заправлена!". '<br>';
+    }
+}
+class Bike extends Vehicle{
+    public function move(): void
+    {
+        echo "Велосипед едет!". '<br>';
+    }
+}
+$crossover = new Crossover();
+$crossover->move(); 
+$crossover->refuel(); 
+$bicycle = new Bike();
+$bicycle->move();
+echo "________________________________Урок_4________________________________" . '<br>';
+
