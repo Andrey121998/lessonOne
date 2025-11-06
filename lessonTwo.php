@@ -228,4 +228,17 @@ $crossover->refuel();
 $bicycle = new Bike();
 $bicycle->move();
 echo "________________________________Урок_4________________________________" . '<br>';
+// задача 1
+//require "User.php";
+//$user = new App\Models\User("Иван");
+//echo $user->getName();//работает, но нужно было закоментить что бы проверить как работает композер
+// задача 2
+require 'vendor/autoload.php';
+// use App\Models\User;//пока используем полный путь.
+$user = new App\Models\User("Анна");
+echo $user->getName();
+// задача 3
+// задача 4
+// задача 5
+
 
