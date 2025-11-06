@@ -233,12 +233,18 @@ echo "________________________________Урок_4________________________________
 //$user = new App\Models\User("Иван");
 //echo $user->getName();//работает, но нужно было закоментить что бы проверить как работает композер
 // задача 2
-require 'vendor/autoload.php';
+// require 'vendor/autoload.php';//дублируется в индексе
 // use App\Models\User;//пока используем полный путь.
 $user = new App\Models\User("Анна");
 echo $user->getName();
 // задача 3
+$service = new App\Services\UserService();
+echo $service->getUserGreeting("Олег");
 // задача 4
+$service = new App\Services\UserService();
+echo $service->getUserGreeting("Мария");    
 // задача 5
+$order = new App\Models\Order();
+$order->log("Заказ создан");
 
 
