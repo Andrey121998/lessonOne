@@ -9,6 +9,8 @@
         "doctrine/orm": "^2.16",
         "symfony/cache": "^6.0",
         "vlucas/phpdotenv": "^5.5",
-        "robmorgan/phinx": "^0.16.10"
+        "swoole/ide-helper": "^6.0",
+        "react/event-loop": "^1.6",
+        "react/http": "^1.11"
     }
 }
