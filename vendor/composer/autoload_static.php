@@ -19,12 +19,17 @@ class ComposerStaticInitff5d50b4ce08f5fb5954b3ed86399e9f
         '9d2b9fc6db0f153a0a149fefb182415e' => __DIR__ . '/..' . '/symfony/polyfill-php84/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'v' => 
         array (
             'voku\\' => 5,
+        ),
+        'p' => 
+        array (
+            'phpseclib3\\' => 11,
         ),
         'S' => 
         array (
@@ -63,6 +68,8 @@ class ComposerStaticInitff5d50b4ce08f5fb5954b3ed86399e9f
             'Psr\\Cache\\' => 10,
             'Predis\\' => 7,
             'PhpOption\\' => 10,
+            'PhpAmqpLib\\' => 11,
+            'ParagonIE\\ConstantTime\\' => 23,
         ),
         'I' => 
         array (
@@ -116,6 +123,10 @@ class ComposerStaticInitff5d50b4ce08f5fb5954b3ed86399e9f
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+        ),
+        'phpseclib3\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
         ),
         'Symfony\\Polyfill\\Php84\\' => 
         array (
@@ -232,6 +243,14 @@ class ComposerStaticInitff5d50b4ce08f5fb5954b3ed86399e9f
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'PhpAmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib',
+        ),
+        'ParagonIE\\ConstantTime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
         ),
         'Illuminate\\Support\\' => 
         array (
