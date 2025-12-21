@@ -61,6 +61,7 @@ class ComposerStaticInitff5d50b4ce08f5fb5954b3ed86399e9f
             'Psr\\Container\\' => 14,
             'Psr\\Clock\\' => 10,
             'Psr\\Cache\\' => 10,
+            'Predis\\' => 7,
             'PhpOption\\' => 10,
         ),
         'I' => 
@@ -223,6 +224,10 @@ class ComposerStaticInitff5d50b4ce08f5fb5954b3ed86399e9f
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'Predis\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/predis/predis/src',
         ),
         'PhpOption\\' => 
         array (

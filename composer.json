@@ -11,6 +11,7 @@
         "vlucas/phpdotenv": "^5.5",
         "swoole/ide-helper": "^6.0",
         "react/event-loop": "^1.6",
-        "react/http": "^1.11"
+        "react/http": "^1.11",
+        "predis/predis": "^3.3"
     }
 }
